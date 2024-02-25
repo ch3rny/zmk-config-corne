@@ -5,8 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 // dt-formatter: indent = "  "
 // dt-formatter: reindentMultilineIntegerCells = "dedent"
@@ -20,55 +20,39 @@
       tapping-term-ms = <150>;
       quick-tap-ms = <0>;
       flavor = "tap-preferred";
-      bindings =
-        <&kp>,
-        <&kp>;
+      bindings = <&kp>, <&kp>;
     };
   };
 
-  combos {
-    compatible = "zmk,combos";
-  };
-
-  macros {
-  };
+  combos { compatible = "zmk,combos"; };
 
   keymap {
     compatible = "zmk,keymap";
 
     base {
       bindings = <
-  &mt LEFT_GUI ESC  &kp Q  &kp W                     &kp E        &kp R        &kp T          &kp Y        &kp U          &kp I    &kp O     &kp P  &mt LEFT_GUI LEFT_BRACKET
-     &mt LCTRL TAB  &kp A  &kp S                     &kp D        &kp F        &kp G          &kp H        &kp J          &kp K    &kp L  &kp SEMI     &mt RCTRL SINGLE_QUOTE
-&mt RALT BACKSLASH  &kp Z  &kp X                     &kp C        &kp V        &kp B          &kp N        &kp M      &kp COMMA  &kp DOT  &kp FSLH     &mt RALT RIGHT_BRACKET
-                                  &mt LEFT_SHIFT BACKSPACE  &lt 1 SPACE  &lt 2 ENTER    &lt 2 ENTER  &lt 1 SPACE  &mt RSHFT DEL
-      >;
-    };
-
-    raise {
-      bindings = <
-   &kp GRAVE  &kp EXCL  &kp AT  &kp HASH    &kp DOLLAR   &kp PERCENT       &kp CARET      &kp AMPS     &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS     &trans
-&kp KP_EQUAL    &kp N1  &kp N2    &kp N3  &kp NUMBER_4  &kp NUMBER_5    &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8          &kp NUMBER_9           &kp NUMBER_0  &kp MINUS
-   &kp UNDER    &trans  &trans    &trans        &trans        &trans          &trans        &trans        &trans                &trans                 &trans   &kp PLUS
-                                  &trans        &trans        &trans          &trans        &trans        &trans
+&mt LGUI ESC   &kp Q  &kp W  &kp E           &kp R        &kp T          &kp Y        &kp U        &kp I          &kp O    &kp P     &mt LGUI LBKT
+&mt LCTRL TAB  &kp A  &kp S  &kp D           &kp F        &kp G          &kp H        &kp J        &kp K          &kp L    &kp SEMI  &mt RCTRL SQT
+&mt RALT BSLH  &kp Z  &kp X  &kp C           &kp V        &kp B          &kp N        &kp M        &kp COMMA      &kp DOT  &kp FSLH  &mt RALT RBKT
+                             &mt LSHFT BSPC  &lt 1 SPACE  &lt 2 ENTER    &lt 2 ENTER  &lt 1 SPACE  &mt RSHFT DEL
       >;
     };
 
     lower {
       bindings = <
-&trans  &kp F1   &kp F2   &kp F3   &kp F4    &bt BT_CLR            &kp HOME   &kp PG_DN   &kp PG_UP       &kp END  &kp PRINTSCREEN      &trans
-&trans  &kp F5   &kp F6   &kp F7   &kp F8  &bt BT_SEL 1            &kp LEFT    &kp DOWN      &kp UP     &kp RIGHT           &trans      &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_SEL 0    &kp K_PLAY_PAUSE  &kp K_PREV  &kp C_NEXT  &kp K_VOL_DN  &kp K_VOLUME_UP  &kp K_MUTE
-                          &trans   &trans        &trans              &trans      &trans      &trans
+&kp GRAVE  &kp EXCL  &kp AT  &kp HASH  &kp DOLLAR  &kp PRCNT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &trans
+&kp EQUAL  &kp N1    &kp N2  &kp N3    &kp N4      &kp N5       &kp N6     &kp N7    &kp N8     &kp N9    &kp N0    &kp MINUS
+&kp UNDER  &trans    &trans  &trans    &trans      &trans       &trans     &trans    &trans     &trans    &trans    &kp PLUS
+                             &trans    &trans      &trans       &trans     &trans    &trans
       >;
     };
 
-    Layer__3 {
+    raise {
       bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp F1  &kp F2   &kp F3   &kp F4   &bt BT_CLR      &kp HOME  &kp PG_DN   &kp PG_UP   &kp END       &kp PSCRN     &trans
+&trans  &kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &kp LEFT  &kp DOWN    &kp UP      &kp RIGHT     &trans        &trans
+&trans  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_SEL 0    &kp K_PP  &kp K_PREV  &kp K_NEXT  &kp K_VOL_DN  &kp K_VOL_UP  &kp K_MUTE
+                         &trans   &trans   &trans          &trans    &trans      &trans
       >;
     };
   };
